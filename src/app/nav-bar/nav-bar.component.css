@@ -1,5 +1,15 @@
-h1{
-    background-color: cornflowerblue;
-    color: black;
-    text-align: center;
+nav {
+    background-color: rgb(124, 195, 243);
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: rgb(15, 3, 37);
+}
+
+.logo-image{
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -6px;
 }
