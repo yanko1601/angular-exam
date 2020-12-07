@@ -17,10 +17,27 @@
             </div>
         </div>
         <div class="col-sm">
-            One of three columns
+            <div class="divTable blueTable">
+                <div class="divTableHeading">
+                    <div class="divTableRow">
+                        <div class="divTableHead">ID</div>
+                        <div class="divTableHead">Име</div>
+                        <div class="divTableHead">username</div>
+                        <div class="divTableHead">e-mail</div>
+                    </div>
+                </div>
+                <div class="divTableBody">
+                    <div *ngFor="let player of players" class="divTableRow">
+                        <div class="divTableCell players">{{ player.id }}</div>
+                        <div class="divTableCell players">{{ player.name }}</div>
+                        <div class="divTableCell players">{{ player.username }}</div>
+                        <div class="divTableCell players">{{ player.email }}</div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-sm">
-            One of three columns
+           third column
         </div>
     </div>
 </div>

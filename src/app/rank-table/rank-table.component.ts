@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {playersList} from '../list-players'
+import { UserService } from '../user.service';
+
 
 @Component({
   selector: 'app-rank-table',
@@ -8,11 +9,13 @@ import {playersList} from '../list-players'
 })
 export class RankTableComponent implements OnInit {
 
-  constructor() { }
-
-  players = playersList;
+ players = [];
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+    this.userService.loadUsers().subscribe(resp => {
+      console.log(resp);
+      this.players = resp;
+    })
   }
-
 }
