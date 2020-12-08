@@ -1,6 +1,7 @@
 <div>
     <h1>Влез</h1>
 </div>
+{{ f.value | json }}
 <br>
 <br>
 <br>
@@ -9,22 +10,22 @@
         <div class="col-sm-2">
         </div>
         <div class="col-sm">
-            <form>
+            <form #f="ngForm">
                 <div class="form-group col-md-6">
                     <div class="form-group">
                         <label for="inputEmail">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                        <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email" ngModel>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputPassword">Парола</label>
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Парола">
+                        <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Парола" ngModel>
                     </div>
                 </div>        
                 <div>
                     <span>
-                        <button type="submit" class="btn btn-primary">Влез</button>
+                        <button type="submit" class="btn btn-primary" (click)="loginHandler(f.value)">Влез</button>
                     </span>
                     <br>
                     <br>
