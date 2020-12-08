@@ -14,7 +14,7 @@ export class RankTableComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.loadUsers().subscribe(resp => {
-      console.log(resp);
+      
       this.players = resp;
     })
   }

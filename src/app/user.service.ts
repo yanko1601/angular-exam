@@ -11,6 +11,6 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   loadUsers(): Observable<IPlayer[]> {
-    return this.http.get<IPlayer[]>('https://jsonplaceholder.typicode.com/users');
+    return this.http.get<IPlayer[]>('https://exam-softuni.herokuapp.com/player/all');
   }
 }
