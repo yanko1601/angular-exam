@@ -9,37 +9,37 @@
         <div class="col-sm-2">
         </div>
         <div class="col-sm">
-            <form>
+            <form #f="ngForm">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputName">Име</label>
-                        <input type="text" class="form-control" id="inputName" placeholder="Име">
+                        <input type="text" class="form-control" id="inputName" name="name" placeholder="Име" ngModel>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputLastName">Фамилия</label>
-                        <input type="text" class="form-control" id="inputLastName" placeholder="Фамилия">
+                        <input type="text" class="form-control" id="inputLastName" name="lastName" placeholder="Фамилия" ngModel>
                     </div>
                 </div>
                 <div class="form-group col-md-6">
                     <div class="form-group">
                         <label for="inputEmail">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                        <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email" ngModel>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputPassword">Парола</label>
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Парола">
+                        <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Парола" ngModel>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputConfirmPassword">Потвърдете паролата</label>
-                        <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Потвърдете паролата">
+                        <input type="password" class="form-control" id="inputConfirmPassword" name="confirmPassword" placeholder="Потвърдете паролата" ngModel>
                     </div>
                 </div>        
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputCity">Град</label>
-                        <select id="inputCity" class="form-control">
+                        <select id="inputCity" class="form-control" name="city" ngModel>
                             <option selected>Изберете...</option>
                             <option>Шумен</option>
                             <option>Варна</option>
@@ -50,12 +50,12 @@
                     </div>
                     <div class="form-group col-md-2">
                         <label for="inputAge">Възраст</label>
-                        <input type="number" class="form-control" id="inputAge">
+                        <input type="number" class="form-control" id="inputAge" name="age" ngModel>
                     </div>
                 </div>
                 <div>
                     <span>
-                        <button type="submit" class="btn btn-primary">Регистрирай ме</button>
+                        <button type="submit" class="btn btn-primary" (click)="registerHandler(f.value)">Регистрирай ме</button>
                     </span>
                     <br>
                     <br>
@@ -72,3 +72,4 @@
         </div>
     </div>
 </div>
+{{ f.value | json}}
