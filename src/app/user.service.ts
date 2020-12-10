@@ -1,13 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IPlayer } from './playersList';
-import { IResponse } from './response';
+import { IPlayer } from './shared/interfaces/playersList';
+import { IResponse } from './shared/interfaces/response';
+import { tap } from 'rxjs/operators';
+import { ILoginPlayer } from './shared/interfaces/loginPlayer';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+
+  userToken: String;
+
+  get loggedUserToken(): String {
+    return this.userToken;
+  }
 
   constructor(private http: HttpClient) { }
 
@@ -18,5 +26,10 @@ export class UserService {
   register(player: IPlayer): Observable<IResponse> {
     return this.http.post<IResponse>(`https://exam-softuni.herokuapp.com/register`, player);
     }
-    
+  
+  loginPlayer(loginPlayer) {
+    return this.http.post<any>('https://exam-softuni.herokuapp.com/login', loginPlayer).pipe(
+      tap((user) => this.userToken = user.loggedUserName.name)
+      );
+  }
 }

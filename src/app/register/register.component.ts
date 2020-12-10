@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
-import { IResponse } from '../response';
+import { IResponse } from '../shared/interfaces/response';
 
 @Component({
   selector: 'app-register',
