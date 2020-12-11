@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     this.userService.loginPlayer(formData).subscribe(
       {
         next: (data) => {
-          this.router.navigate(['/']);
+          setTimeout(() => this.router.navigate(['/']), 3000) ;
         }
       }
     )

@@ -5,4 +5,5 @@ export interface IPlayer {
     lastName: String;
     email: String;
     city: String;
+    points: number;
   }

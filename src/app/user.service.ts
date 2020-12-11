@@ -30,7 +30,11 @@ export class UserService {
     return this.http.post<any>('https://exam-softuni.herokuapp.com/login', loginPlayer).pipe(
       tap((user) => {
         this.loggedPlayer = user;
-        console.log(this.loggedPlayer);
+        window.localStorage.setItem('isLogged', 'true');
+        window.localStorage.setItem('playerName', user.loggedUserName.name);
+        window.localStorage.setItem('id', user.loggedUserName.id);
+        window.localStorage.setItem('playerCity', user.userCity);
+        window.localStorage.setItem('role', user.role);
       }));
   }
 }

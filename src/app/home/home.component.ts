@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
-import { ILoggedPlayer } from '../shared/interfaces/loggedPlayer';
 
 @Component({
   selector: 'app-home',
@@ -9,14 +8,12 @@ import { ILoggedPlayer } from '../shared/interfaces/loggedPlayer';
 })
 export class HomeComponent implements OnInit {
 
-  currentPlayer = this.currPlayer;
-
-  get currPlayer() {
-    return this.userService.playerLogged;
-  }
-
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
   }
+
+  playerCity = window.localStorage.getItem('playerCity');
+  playerName = window.localStorage.getItem('playerName');
+
 }

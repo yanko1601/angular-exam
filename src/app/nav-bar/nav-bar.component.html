@@ -1,11 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-light">
+  <div *ngIf="isLogged !== 'true' ">
     <a class="navbar-brand" href="/">
-        <div class="logo-image">
-              <img src="../../assets/tennis-logo-icon-vector-18862607.jpg" class="img-fluid">
-        </div>
-  </a>
-    <a class="navbar-brand" href="#">Race tennis</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="logo-image">
+        <img src="../../assets/tennis-logo-icon-vector-18862607.jpg" class="img-fluid">
+      </div>
+    </a>
+    <a class="navbar-brand" href="#">Race tennis   Здравейте, {{ player.name }}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
@@ -21,4 +23,41 @@
         </li>
       </ul>
     </div>
-  </nav>
+  </div>
+  <div *ngIf="isLogged === 'true'">
+    <a class="navbar-brand" href="/">
+      <div class="logo-image">
+        <img src="../../assets/tennis-logo-icon-vector-18862607.jpg" class="img-fluid">
+      </div>
+    </a>
+    <a class="navbar-brand" routerLink='/'>Race tennis</a>
+    <div class="user-nav">
+      <span>
+        <h3>Здравейте, {{ playerName }}</h3><button class="btn btn-primary" (click)="logOutHandler()">Излез</button>
+      </span>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink='/'>Начало <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink='/login'>Ранглиста</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink='/register'>Предизвикай играч</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink='/'>Профил</a>
+        </li>
+        <li *ngIf="playerRole === 'ADMIN'" class="nav-item">
+          <a class="nav-link" routerLink='/'>Админ панел</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
