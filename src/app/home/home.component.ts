@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { ILoggedPlayer } from '../shared/interfaces/loggedPlayer';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,10 @@ import { UserService } from '../user.service';
 })
 export class HomeComponent implements OnInit {
 
-  userToken: String = this.loggedUserToken;
+  currentPlayer = this.currPlayer;
 
-  get loggedUserToken() {
-    return this.userService.loggedUserToken;
+  get currPlayer() {
+    return this.userService.playerLogged;
   }
 
   constructor(private userService: UserService) { }
