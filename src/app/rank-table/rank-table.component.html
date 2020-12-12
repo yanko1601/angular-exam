@@ -13,7 +13,7 @@
                     <div class="divTableBody">
                         <div *ngFor="let player of players" class="divTableRow">
                             <div *ngIf="player.city === currentCity" class="divTableCell players">{{ player.rank }}</div>
-                            <div *ngIf="player.city === currentCity" class="divTableCell players" routerLink='/login'>{{ player.name + ' ' + player.lastName}}</div>
+                            <div *ngIf="player.city === currentCity" class="divTableCell players" routerLink='/profile/{{player.id}}'>{{ player.name + ' ' + player.lastName}}</div>
                         </div>
                     </div>
                 </div>
