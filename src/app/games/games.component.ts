@@ -9,6 +9,7 @@ import { UserService } from '../user.service';
 export class GamesComponent implements OnInit {
 
   allGames;
+  isAdmin = (window.localStorage.getItem('role') === 'ADMIN');
 
   constructor(private userService: UserService) { }
 

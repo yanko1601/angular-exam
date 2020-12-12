@@ -23,7 +23,9 @@ export class LoginComponent implements OnInit {
     this.userService.loginPlayer(formData).subscribe(
       {
         next: (data) => {
-          setTimeout(() => this.router.navigate(['/']), 3000) ;
+          this.response = data;
+          setTimeout(() => this.router.navigate(['currentranklist']), 3000) ;
+          console.log(this.response);
         }
       }
     )

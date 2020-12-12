@@ -14,6 +14,8 @@ import { UserService } from '../app/user.service';
 import { ProfileComponent } from './profile/profile.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { GamesComponent } from './games/games.component';
+import { SetResultComponent } from './set-result/set-result.component';
+import { CurrentRanklistComponent } from './current-ranklist/current-ranklist.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { GamesComponent } from './games/games.component';
     RegisterComponent,
     ProfileComponent,
     AdminPanelComponent,
-    GamesComponent
+    GamesComponent,
+    SetResultComponent,
+    CurrentRanklistComponent
   ],
   imports: [
     BrowserModule,
