@@ -44,7 +44,11 @@ export class UserService {
       }));
   }
 
-  loadProfile(id): Observable<any> {
-    return this.http.get<any>('https://exam-softuni.herokuapp.com/player/' + id)
+  loadProfile(id): Observable<IProfile> {
+    return this.http.get<IProfile>('https://exam-softuni.herokuapp.com/player/' + id)
+  }
+
+  loadGames(): Observable<any>{
+    return this.http.get<any>('https://exam-softuni.herokuapp.com/games/all');
   }
 }

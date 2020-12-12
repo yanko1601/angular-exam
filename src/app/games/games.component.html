@@ -1,0 +1,34 @@
+<div class="table-header">
+    Предстоящи мачове
+    <div class="divTable blueTable">
+        <div class="divTableHeading">
+            <div class="divTableRow">
+                <div class="divTableHead">Мач</div>
+                <div class="divTableHead"></div>
+            </div>
+        </div>
+        <div class="divTableBody">
+            <div *ngFor="let game of allGames" class="divTableRow">
+                <div *ngIf="game.finished === false" class="divTableCell players">{{ game.firstPlayer.name + ' ' + game.firstPlayer.lastName + ' : ' + game.secondPlayer.name + ' ' + game.secondPlayer.lastName }}</div>
+                <div *ngIf="game.finished === false" class="divTableCell players"><button class="btn btn-alert">Резултат</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="table-header">
+    Завършени мачове
+    <div class="divTable blueTable">
+        <div class="divTableHeading">
+            <div class="divTableRow">
+                <div class="divTableHead">Мач</div>
+                <div class="divTableHead">Резултат</div>
+            </div>
+        </div>
+        <div class="divTableBody">
+            <div *ngFor="let game of allGames" class="divTableRow">
+                <div *ngIf="game.finished === true" class="divTableCell players">{{ game.winner.name + ' ' + game.winner.lastName + ' : ' + game.looser.name + ' ' + game.looser.lastName }}</div>
+                <div *ngIf="game.finished === true" class="divTableCell players">{{ game.winnerGames + ' : ' + game.looserGames }}</div>
+            </div>
+        </div>
+    </div>
+</div>

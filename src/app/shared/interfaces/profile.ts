@@ -7,4 +7,5 @@ export interface IProfile {
     rank: number;
     city: String;
     email: String;
+    role: String;
 }

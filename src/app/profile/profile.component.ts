@@ -10,7 +10,7 @@ import { UserService } from '../user.service';
 })
 export class ProfileComponent implements OnInit {
 
-  currentProfile: any;
+  currentProfile: IProfile;
   currentPlayerId;
 
 

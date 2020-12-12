@@ -13,6 +13,7 @@ import { RegisterComponent } from './register/register.component';
 import { UserService } from '../app/user.service';
 import { ProfileComponent } from './profile/profile.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { GamesComponent } from './games/games.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
-    AdminPanelComponent
+    AdminPanelComponent,
+    GamesComponent
   ],
   imports: [
     BrowserModule,
