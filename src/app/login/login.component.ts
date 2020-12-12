@@ -20,14 +20,18 @@ export class LoginComponent implements OnInit {
   }
 
   loginHandler(formData) {
-    this.userService.loginPlayer(formData).subscribe(
-      {
-        next: (data) => {
-          this.response = data;
-          setTimeout(() => this.router.navigate(['currentranklist']), 3000) ;
-          console.log(this.response);
-        }
+    this.userService.loginPlayer(formData).subscribe(resp => {
+      this.response = resp;
+      if (this.response.success) {
+        setTimeout(() => {
+          this.router.navigate(['currentranklist']);
+        },3000);
+      } else {
+        setTimeout(() => {
+          this.router.navigate(['login']);
+        },3000);
       }
+    }
     )
   }
 

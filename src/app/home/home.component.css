@@ -2,3 +2,10 @@ h1 {
     background-color: coral;
     text-align: center;
 }
+
+.home-header {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 36px;
+    background-color: rgb(199, 232, 238);
+}

@@ -2,7 +2,15 @@
     <h1>Влез</h1>
 </div>
 <br>
-<br>
+<div *ngIf="response != null && response.success === true" class="success-msg">
+    <i class="fa fa-check"></i>
+    {{ response.message }}
+</div>
+
+<div *ngIf="response != null && response.success === false" class="error-msg">
+    <i class="fa fa-times-circle"></i>
+    {{ response.message }}
+  </div>
 <br>
 <div class="container">
     <div class="row">
