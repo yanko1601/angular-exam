@@ -21,18 +21,20 @@
                 <div class="form-group col-md-6">
                     <div class="form-group">
                         <label for="inputEmail">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email" ngModel>
+                        <input #userEmail="ngModel" type="email" [class.input-error]="userEmail.touched && !!userEmail.errors" 
+                                class="form-control" id="inputEmail" name="email" placeholder="Email" ngModel required email>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputPassword">Парола</label>
-                        <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Парола" ngModel>
+                        <input #userPassword="ngModel" type="password" [class.input-error]="userPassword.touched && !!userPassword.errors" 
+                        class="form-control" id="inputPassword" name="password" placeholder="Парола" ngModel required>
                     </div>
                 </div>        
                 <div>
                     <span>
-                        <button type="submit" class="btn btn-primary" (click)="loginHandler(f.value)">Влез</button>
+                        <button type="submit" [disabled]="f.invalid" class="btn btn-primary" (click)="loginHandler(f.value)">Влез</button>
                     </span>
                     <br>
                     <br>

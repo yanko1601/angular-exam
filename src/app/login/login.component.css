@@ -40,3 +40,9 @@ html {
 body {
   width: 640px;
 }
+
+.input-error {
+  border-color: red;
+  border-width: 3px;
+  background-color: rgb(233, 204, 210);
+}

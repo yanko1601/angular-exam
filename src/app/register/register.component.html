@@ -1,5 +1,6 @@
 <div>
     <h1>Регистрация</h1>
+    <p class="register-text">Моля, въвеждайте имената на кирилица</p>
 </div>
 <br>
 <div *ngIf="response != null && response.success === true" class="success-msg">
@@ -20,17 +21,20 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputName">Име</label>
-                        <input type="text" class="form-control" id="inputName" name="name" placeholder="Име" ngModel>
+                        <input #userName="ngModel" type="text" [class.input-error]="userName.touched && !!userName.errors" 
+                            class="form-control" id="inputName" name="name" placeholder="Име" pattern="[А-я0-9]+" ngModel required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputLastName">Фамилия</label>
-                        <input type="text" class="form-control" id="inputLastName" name="lastName" placeholder="Фамилия" ngModel>
+                        <input #userLastName="ngModel" type="text" [class.input-error]="userLastName.touched && !!userLastName.errors" 
+                                class="form-control" id="inputLastName" name="lastName" placeholder="Фамилия" pattern="[А-я0-9]+" ngModel required>
                     </div>
                 </div>
                 <div class="form-group col-md-6">
                     <div class="form-group">
                         <label for="inputEmail">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email" ngModel>
+                        <input #userEmail="ngModel" type="email" [class.input-error]="userEmail.touched && !!userEmail.errors" 
+                                class="form-control" id="inputEmail" name="email" placeholder="Email" ngModel required email> 
                     </div>
                 </div>
                 <div class="form-row">
@@ -62,7 +66,7 @@
                 </div>
                 <div>
                     <span>
-                        <button type="submit" class="btn btn-primary" (click)="registerHandler(f.value)">Регистрирай ме</button>
+                        <button type="submit" [disabled]="f.invalid" class="btn btn-primary" (click)="registerHandler(f.value)">Регистрирай ме</button>
                     </span>
                     <br>
                     <br>
