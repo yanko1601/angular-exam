@@ -26,7 +26,6 @@ export class RankTableComponent implements OnInit {
         } 
       })
       this.playersByPoints = resp.sort((a, b) => {return b.points - a.points});
-      console.log('players by points: ' + this.playersByPoints );
     })
   }
 }

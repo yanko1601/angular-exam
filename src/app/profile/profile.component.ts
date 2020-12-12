@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { IProfile} from '../shared/interfaces/profile';
+import { UserService } from '../user.service';
+
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  currentProfile: any;
+  currentPlayerId;
+
+
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+    this.currentPlayerId = window.localStorage.getItem('id');
+    this.userService.loadProfile(this.currentPlayerId).subscribe(resp => {
+      
+      this.currentProfile = resp;
+    });
   }
 
 }

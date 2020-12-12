@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { IPlayer } from './shared/interfaces/playersList';
 import { IResponse } from './shared/interfaces/response';
 import { tap } from 'rxjs/operators';
+import { IProfile } from './shared/interfaces/profile';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +12,14 @@ import { tap } from 'rxjs/operators';
 export class UserService {
 
   loggedPlayer = null;
+  currentPlayerId;
 
   get playerLogged() {
     return this.loggedPlayer;
+  }
+
+  get userId() {
+    return this.loggedPlayer.loggedUserName.id;
   }
 
   constructor(private http: HttpClient) { }
@@ -36,5 +42,9 @@ export class UserService {
         window.localStorage.setItem('playerCity', user.userCity);
         window.localStorage.setItem('role', user.role);
       }));
+  }
+
+  loadProfile(id): Observable<any> {
+    return this.http.get<any>('https://exam-softuni.herokuapp.com/player/' + id)
   }
 }

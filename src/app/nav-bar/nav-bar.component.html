@@ -52,10 +52,10 @@
           <a class="nav-link" routerLink='/register'>Предизвикай играч</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink='/'>Профил</a>
+          <a class="nav-link" routerLink='/profile/{{playerId}}'>Профил</a>
         </li>
         <li *ngIf="playerRole === 'ADMIN'" class="nav-item">
-          <a class="nav-link" routerLink='/'>Админ панел</a>
+          <a class="nav-link" routerLink='/admin'>Админ панел</a>
         </li>
       </ul>
     </div>
