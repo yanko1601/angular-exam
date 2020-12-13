@@ -51,4 +51,8 @@ export class UserService {
   loadGames(): Observable<any>{
     return this.http.get<any>('https://exam-softuni.herokuapp.com/games/all');
   }
+
+  loadChallengeList(id): Observable<any> {
+    return this.http.get<any>('https://exam-softuni.herokuapp.com/challenge/' + id)
+  }
 }

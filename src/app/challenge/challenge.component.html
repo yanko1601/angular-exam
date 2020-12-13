@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+        </div>
+        <div class="col-sm">
+            <div class="table-header">
+                Предизвикай играч
+                <div class="divTable blueTable">
+                    <div class="divTableHeading">
+                        <div class="divTableRow">
+                            <div class="divTableHead">Играч</div>
+                            <div class="divTableHead"></div>
+                        </div>
+                    </div>
+                    <div class="divTableBody">
+                        <div *ngFor="let player of list.challengeList" class="divTableRow">
+                            <div class="divTableCell players">{{ player.name + ' ' + player.lastName }}</div>
+                            <div class="divTableCell players"><button class="btn btn-danger">Предизвикай</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+        </div>
+    </div>
+</div>

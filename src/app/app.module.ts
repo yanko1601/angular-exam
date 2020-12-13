@@ -16,6 +16,7 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { GamesComponent } from './games/games.component';
 import { SetResultComponent } from './set-result/set-result.component';
 import { CurrentRanklistComponent } from './current-ranklist/current-ranklist.component';
+import { ChallengeComponent } from './challenge/challenge.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CurrentRanklistComponent } from './current-ranklist/current-ranklist.co
     AdminPanelComponent,
     GamesComponent,
     SetResultComponent,
-    CurrentRanklistComponent
+    CurrentRanklistComponent,
+    ChallengeComponent
   ],
   imports: [
     BrowserModule,
