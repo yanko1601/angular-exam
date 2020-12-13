@@ -1,3 +1,4 @@
+
 <div class="container">
     <div class="row" *ngFor="let currentCity of listOfCities">
         <div class="col-sm">
@@ -40,7 +41,7 @@
             
         </div>
         <div class="col-sm">
-           <app-games></app-games>
+           <app-games [parData]="currentCity"></app-games>
         </div>
     </div>
 </div>

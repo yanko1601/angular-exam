@@ -9,8 +9,8 @@
         </div>
         <div class="divTableBody">
             <div *ngFor="let game of allGames" class="divTableRow">
-                <div *ngIf="game.finished === false" class="divTableCell players">{{ game.firstPlayer.name + ' ' + game.firstPlayer.lastName + ' : ' + game.secondPlayer.name + ' ' + game.secondPlayer.lastName }}</div>
-                <div *ngIf="game.finished === false" class="divTableCell players"><button routerLink="../setresult" class="btn btn-info" [disabled]="!isAdmin">Резултат</button></div>
+                <div *ngIf="game.finished === false && game.firstPlayer.city === parData" class="divTableCell players">{{ game.firstPlayer.name + ' ' + game.firstPlayer.lastName + ' : ' + game.secondPlayer.name + ' ' + game.secondPlayer.lastName }}</div>
+                <div *ngIf="game.finished === false && game.firstPlayer.city === parData" class="divTableCell players"><button routerLink="../setresult" class="btn btn-info" [disabled]="!isAdmin">Резултат</button></div>
             </div>
         </div>
     </div>
@@ -26,8 +26,8 @@
         </div>
         <div class="divTableBody">
             <div *ngFor="let game of allGames" class="divTableRow">
-                <div *ngIf="game.finished === true" class="divTableCell players">{{ game.winner.name + ' ' + game.winner.lastName + ' : ' + game.looser.name + ' ' + game.looser.lastName }}</div>
-                <div *ngIf="game.finished === true" class="divTableCell players">{{ game.winnerGames + ' : ' + game.looserGames }}</div>
+                <div *ngIf="game.finished === true && game.firstPlayer.city === parData" class="divTableCell players">{{ game.winner.name + ' ' + game.winner.lastName + ' : ' + game.looser.name + ' ' + game.looser.lastName }}</div>
+                <div *ngIf="game.finished === true && game.firstPlayer.city === parData" class="divTableCell players">{{ game.winnerGames + ' : ' + game.looserGames }}</div>
             </div>
         </div>
     </div>
