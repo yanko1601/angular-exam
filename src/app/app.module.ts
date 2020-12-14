@@ -17,6 +17,7 @@ import { GamesComponent } from './games/games.component';
 import { SetResultComponent } from './set-result/set-result.component';
 import { CurrentRanklistComponent } from './current-ranklist/current-ranklist.component';
 import { ChallengeComponent } from './challenge/challenge.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { ChallengeComponent } from './challenge/challenge.component';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [UserService],
+  providers: [UserService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

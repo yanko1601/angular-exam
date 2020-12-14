@@ -41,6 +41,7 @@ export class UserService {
         window.localStorage.setItem('id', user.loggedUserName.id);
         window.localStorage.setItem('playerCity', user.userCity);
         window.localStorage.setItem('role', user.role);
+        window.localStorage.setItem('token', user.token);
       }));
   }
 
@@ -54,5 +55,9 @@ export class UserService {
 
   loadChallengeList(id): Observable<any> {
     return this.http.get<any>('https://exam-softuni.herokuapp.com/challenge/' + id)
+  }
+
+  authenticated(): boolean {
+    return !!localStorage.getItem('token');
   }
 }

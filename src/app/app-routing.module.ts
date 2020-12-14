@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { AuthGuard } from './auth.guard';
 import { ChallengeComponent } from './challenge/challenge.component';
 import { CurrentRanklistComponent } from './current-ranklist/current-ranklist.component';
 import { GamesComponent } from './games/games.component';
@@ -19,7 +20,9 @@ const routes: Routes = [
   {path: 'games',component: GamesComponent},
   {path: 'setresult', component: SetResultComponent},
   {path: 'currentranklist', component: CurrentRanklistComponent},
-  {path: 'challenge/:id', component: ChallengeComponent}
+  {path: 'challenge/:id',
+          component: ChallengeComponent,
+          canActivate: [AuthGuard]}
 ];
 
 @NgModule({
